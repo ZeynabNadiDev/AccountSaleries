@@ -14,9 +14,9 @@ It consists of:
 
 - **OvertimePolicies (Class Library)**
   - Contains overtime calculation methods:
-    - `CalcurlatorA`
-    - `CalcurlatorB`
-    - `CalcurlatorC`
+    - `CalculatorA`
+    - `CalculatorB`
+    - `CalculatorC`
 
 - **Salary Web API**
   - Handles salary data submission, calculation, and persistence
@@ -27,63 +27,41 @@ It consists of:
 
 ## 🔄 Data Flow & Architecture
 
-Request (JSON / XML / Custom)
-
-↓
-
-Parser (per data type)
-
-↓
-
-SalaryRawDto (Unified DTO)
-
-↓
-
-Mapper
-
-↓
-
-SalaryInput (Domain Model)
-
-↓
-
+Request (JSON / XML / Custom)  
+↓  
+Parser (per data type)  
+↓  
+SalaryRawDto (Unified DTO)  
+↓  
+Mapper  
+↓  
+SalaryInput (Domain Model)  
+↓  
 Service → Database
-
-
-This design ensures:
-- Separation of concerns
-- Format-independent domain logic
-- Easier extensibility and maintainability
 
 ---
 
 ## 📥 Supported Input Formats
 
 ### JSON
-
 POST /json/salary/add
 
 ### XML
-
 POST /xml/salary/add
 
 ### Custom
-
 POST /custom/salary/add
 
 Custom format example:
-
+```text
 FirstName/LastName/BasicSalary/Allowance/Transportation/Date
 Ali/Ahmadi/1200000/400000/350000/14010801
 
-
-## Request Body
-```json
+📦 Request Body
 {
   "data": "...",
   "overTimeCalculator": "CalculatorB"
 }
-
 🧮 Salary Calculation Formula
 
 NetSalary =
@@ -94,7 +72,6 @@ BasicSalary
 - Tax
 
 📡 API Endpoints
-
 Add
 POST /{datatype}/salary/add
 
@@ -111,7 +88,6 @@ GetRange (Dapper)
 GET /salary/getrange
 
 🛠 Technologies Used
-
 ASP.NET Core Web API
 EF Core (Add, Update, Delete)
 Dapper (Get, GetRange)
@@ -122,9 +98,9 @@ SQL Server
 🐳 Docker Notes
 This project uses a Dockerfile for containerization.
 
-Docker Compose was intentionally not used.
-SQL Server is expected to be available on the host machine.
-The API connects to SQL Server using SQL Authentication via:
+Docker Compose was intentionally not used
+SQL Server is expected to be available on the host machine
+SQL connection uses:
 
 host.docker.internal
 
@@ -133,29 +109,30 @@ docker build -t salary-api .
 docker run -p 5178:8080 salary-api
 
 ▶️ Run Locally (Without Docker)
+
 1.Update the connection string in appsettings.json
-2.Apply migrations:
+4.Apply migrations:
 
 dotnet ef database update
-
 3.Run the API
 4.Open Swagger:
 
 http://localhost:5178/swagger
+
 🧪 Testing
 Swagger UI is available for testing all endpoints and input formats.
 
 🎥 Video Presentation
-A short video (under 5 minutes) is provided separately, explaining:
+A short video explaining:
 Architecture decisions
 Design choices
 Trade-offs and assumptions
 https://drive.google.com/file/d/1Dl57u1FfSD48m-mbBB8Ft0MmCf-lNh3x/view?usp=drive_link
 
 📌 Notes
-Due to time constraints, full unit test coverage was not implemented.
-The architecture is designed to be testable and extensible.
+Due to time constraints, full unit test coverage was not implemented
+The architecture is designed to be testable and extensible
 
 📬 Author
-https://github.com/ZeynabNadiDev
-znadi05@gmail.com
+GitHub: https://github.com/ZeynabNadiDev
+Email: znadi05@gmail.com
