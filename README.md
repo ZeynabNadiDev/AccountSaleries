@@ -77,12 +77,13 @@ FirstName/LastName/BasicSalary/Allowance/Transportation/Date
 Ali/Ahmadi/1200000/400000/350000/14010801
 
 
-Request Body:
+## Request Body
 ```json
 {
   "data": "...",
-  "overTimeCalculator": "CalcurlatorB"
+  "overTimeCalculator": "CalculatorB"
 }
+
 🧮 Salary Calculation Formula
 
 NetSalary =
