@@ -1,0 +1,47 @@
+# ---------- Build outputs ----------
+**/bin/
+**/obj/
+
+# ---------- User-specific files ----------
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+
+# ---------- VS / IDE ----------
+.vs/
+.vscode/
+.idea/
+*.swp
+
+# ---------- Git ----------
+.git/
+.gitignore
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+
+# ---------- Logs ----------
+*.log
+
+# ---------- Docker ----------
+docker-compose*
+Dockerfile.*
+Docker/
+
+# ---------- Test / Coverage ----------
+**/TestResults/
+**/coverage/
+
+# ---------- Docs / misc ----------
+*.md
+*.txt
+
+# ---------- Node ----------
+node_modules/
+
+# ---------- Secrets ----------
+appsettings.Development.json
+appsettings.Local.json
+.env

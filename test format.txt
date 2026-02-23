@@ -1,0 +1,20 @@
+xml
+{
+  "data": "<SalaryRawDto><FirstName>Ali</FirstName><LastName>Ahmadi</LastName><BasicSalary>1200000</BasicSalary><Allowance>400000</Allowance><Transportation>350000</Transportation><Date>14010201</Date></SalaryRawDto>",
+  "overTimeCalculator": "CalculatorB"
+}
+
+json
+{
+  "data": "{\"firstName\": \"Sara\", \"lastName\": \"Jafari\", \"basicSalary\": 30000000, \"allowance\": 7000000, \"transportation\": 2000000, \"date\": \"14040101\"}",
+  "overTimeCalculator": "CalculatorA"
+}
+
+custom
+{
+  "data": "FirstName/LastName/BasicSalary/Allowance/Transportation/Date\nAli/Ahmadi/1200000/400000/350000/14010201",
+  "overTimeCalculator": "CalculatorB"
+}
+
+لینک ویدئو توضیحات :
+https://drive.google.com/file/d/1Dl57u1FfSD48m-mbBB8Ft0MmCf-lNh3x/view?usp=drive_link
